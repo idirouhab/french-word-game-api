@@ -2,12 +2,14 @@ require('dotenv').config();
 
 const express = require('express');
 const sequelize = require('./config/db'); // Adjust the path as necessary
+const cors = require('cors');
 
 // Routes
 const verbsRouter = require('./routes/verbs'); // Adjust the path as necessary
 const wordsRouter = require('./routes/words'); // Adjust the path as necessary
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3000; // Use environment variable or default to 3000
 
 // Middleware
